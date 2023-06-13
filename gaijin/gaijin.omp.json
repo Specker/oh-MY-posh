@@ -1,5 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "console_title_template": "{{.UserName}}@{{.HostName}} {{.Shell}} in {{.PWD}}",
     "palette": {
       "foreground": "#c1fd7d",
       "infoground": "#88ff00",
@@ -127,7 +128,7 @@
               "style": "full"
             },
             "style": "plain",
-            "template": "\u2516[<p:path-foreground>{{ .Path }}</>]",
+            "template": "\u2523[<p:path-foreground>{{ .Path }}</>]",
             "type": "path"
           }
         ],
