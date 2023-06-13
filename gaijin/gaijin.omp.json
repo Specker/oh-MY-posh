@@ -15,7 +15,7 @@
           {
             "foreground": "p:foreground",
             "style": "plain",
-            "template": "\u250f[{{ if .SSHSession }}<p:white>\ueba9</> {{ end }}<p:white>\ueb99</> {{ .UserName }} from",
+            "template": "\u250f[{{ if .SSHSession }}<p:white>\ueba9</> {{ end }}<p:white>{{ if .Root }}\uf2be{{else}}\ueb99{{ end }}</> {{ .UserName }} from",
             "type": "session"
           },
           {
