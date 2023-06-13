@@ -1,17 +1,24 @@
 {
     "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "palette": {
+      "foreground": "#c1fd7d",
+      "infoground": "#88ff00",
+      "stat-foreground": "#efffa8",
+      "path-foreground": "#98bfad",
+      "white": "#ffffff"
+    },
     "blocks": [
       {
         "alignment": "left",
         "segments": [
           {
-            "foreground": "#7eb8da",
+            "foreground": "p:foreground",
             "style": "plain",
-            "template": "\u250f[{{ if .SSHSession }}<#ffffff></> {{ end }}<#ffffff>\ueb99</> {{ .UserName }} from",
+            "template": "\u250f[{{ if .SSHSession }}<p:white></> {{ end }}<p:white>\ueb99</> {{ .UserName }} from",
             "type": "session"
           },
           {
-            "foreground": "#ffffff",
+            "foreground": "p:white",
             "properties": {
               "alpine": "\uf300",
               "arch": "\uf303",
@@ -34,19 +41,19 @@
             "type": "os"
           },
           {
-            "foreground": "#7eb8da",
+            "foreground": "p:foreground",
             "style": "plain",
             "template": "{{ .HostName }}]",
             "type": "session"
           },
           {
-            "foreground": "#be9ddf",
+            "foreground": "p:infoground",
             "properties": {
               "style": "dallas",
               "threshold": 0
             },
             "style": "diamond",
-            "template": "[<#ffffff>\uf252</> {{ .FormattedMs }}s]",
+            "template": "[<p:white>\uf252</> {{ .FormattedMs }}s]",
             "type": "executiontime"
           },
           {
@@ -58,53 +65,53 @@
             "type": "root"
           },
           {
-            "foreground": "#be9ddf",
+            "foreground": "p:infoground",
             "style": "diamond",
-            "template": "[<#ffffff>\ue266</> RAM: {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB]",
+            "template": "[<p:white>\ue266</> RAM: {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB]",
             "type": "sysinfo"
           },
           {
-            "foreground": "#7eb8da",
+            "foreground": "p:foreground",
             "properties": {
               "time_format": "Monday at 3:04:05 PM"
             },
             "style": "diamond",
-            "template": "[<#ffffff>\uf073</> {{ .CurrentDate | date .Format }}]",
+            "template": "[<p:white>\uf073</> {{ .CurrentDate | date .Format }}]",
             "type": "time"
           },
           {
-            "foreground": "#ffa5d8",
+            "foreground": "p:stat-foreground",
             "properties": {
               "fetch_stash_count": true,
               "fetch_status": true,
               "fetch_upstream_icon": true
             },
             "style": "plain",
-            "template": "[<#ffffff>{{ .UpstreamIcon }}</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <#ffffff>\uf044</> {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#ffffff>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} <#ffffff>\ueb4b</> {{ .StashCount }}{{ end }}]",
+            "template": "[<p:white>{{ .UpstreamIcon }}</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <p:white>\uf044</> {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <p:white>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} <p:white>\ueb4b</> {{ .StashCount }}{{ end }}]",
             "type": "git"
           },
           {
-            "foreground": "#ffa5d8",
+            "foreground": "p:stat-foreground",
             "style": "plain",
             "template": "[{{ .Profile }}{{if .Region}}@{{ .Region }}{{ end }}]",
             "type": "aws"
           },
           {
-            "foreground": "#ffa5d8",
+            "foreground": "p:stat-foreground",
             "style": "plain",
             "template": "[{{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}]",
             "type": "kubectl"
           },
           {
-            "foreground": "#ffa5d8",
+            "foreground": "p:stat-foreground",
             "style": "plain",
             "template": "[\uf0e7]",
             "type": "root"
           },
           {
-            "foreground": "#ffa5d8",
+            "foreground": "p:stat-foreground",
             "style": "powerline",
-            "template": "[<#ffffff>\uea6c</> Error, check your command]",
+            "template": "[<p:white>\uea6c</> Error, check your command]",
             "type": "exit"
           }
         ],
@@ -115,12 +122,12 @@
         "newline": true,
         "segments": [
           {
-            "foreground": "#7eb8da",
+            "foreground": "p:foreground",
             "properties": {
               "style": "full"
             },
             "style": "plain",
-            "template": "\u2516[<#98bfad>{{ .Path }}</>]",
+            "template": "\u2516[<p:path-foreground>{{ .Path }}</>]",
             "type": "path"
           }
         ],
@@ -131,7 +138,7 @@
         "newline": true,
         "segments": [
           {
-            "foreground": "#7eb8da",
+            "foreground": "p:foreground",
             "style": "plain",
             "template": "\u2514\u2500Δ",
             "type": "text"
