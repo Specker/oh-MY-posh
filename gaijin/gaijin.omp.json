@@ -7,7 +7,7 @@
           {
             "foreground": "#7eb8da",
             "style": "plain",
-            "template": "\u250f[{{ if .SSHSession }}  {{ end }}<#ffffff>\ueb99</> {{ .UserName }} from",
+            "template": "\u250f[{{ if .SSHSession }}<#ffffff></> {{ end }}<#ffffff>\ueb99</> {{ .UserName }} from",
             "type": "session"
           },
           {
