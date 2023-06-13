@@ -58,14 +58,6 @@
             "type": "executiontime"
           },
           {
-            "properties": {
-              "root_icon": "\uf292"
-            },
-            "style": "diamond",
-            "template": "\uf0e7",
-            "type": "root"
-          },
-          {
             "foreground": "p:infoground",
             "style": "diamond",
             "template": "[<p:white>\ue266</> RAM: {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB]",
@@ -102,12 +94,6 @@
             "style": "plain",
             "template": "[{{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}]",
             "type": "kubectl"
-          },
-          {
-            "foreground": "p:stat-foreground",
-            "style": "plain",
-            "template": "[\uf0e7]",
-            "type": "root"
           },
           {
             "foreground": "p:stat-foreground",
