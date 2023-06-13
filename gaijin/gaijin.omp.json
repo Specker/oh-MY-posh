@@ -74,17 +74,6 @@
           },
           {
             "foreground": "p:stat-foreground",
-            "properties": {
-              "fetch_stash_count": true,
-              "fetch_status": true,
-              "fetch_upstream_icon": true
-            },
-            "style": "plain",
-            "template": "[<p:white>{{ .UpstreamIcon }}</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <p:white>\uf044</> {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <p:white>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} <p:white>\ueb4b</> {{ .StashCount }}{{ end }}]",
-            "type": "git"
-          },
-          {
-            "foreground": "p:stat-foreground",
             "style": "plain",
             "template": "[{{ .Profile }}{{if .Region}}@{{ .Region }}{{ end }}]",
             "type": "aws"
@@ -116,6 +105,22 @@
             "style": "plain",
             "template": "\u2523[<p:path-foreground>{{ .Path }}</>]",
             "type": "path"
+          },
+          {
+            "type": "project",
+            "foreground": "p:stat-foreground",
+            "template": "[{{ if .Error }}{{ .Error }}{{ else }}{{ if .Name }}{{ .Name }}{{ end }} {{ if .Version }}\uf487 {{.Version}}{{ end }}{{ end }}]"
+          },
+          {
+            "foreground": "p:stat-foreground",
+            "properties": {
+              "fetch_stash_count": true,
+              "fetch_status": true,
+              "fetch_upstream_icon": true
+            },
+            "style": "plain",
+            "template": "[<p:white>{{ .UpstreamIcon }}</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <p:white>\uf044</> {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <p:white>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} <p:white>\ueb4b</> {{ .StashCount }}{{ end }}]",
+            "type": "git"
           }
         ],
         "type": "prompt"
