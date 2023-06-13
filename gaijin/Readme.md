@@ -5,4 +5,6 @@
 ## Changes
  - SSH Indicator
  - OS Indicator
+ - Root Indicator
+ - Project Name
  - Color Palette
